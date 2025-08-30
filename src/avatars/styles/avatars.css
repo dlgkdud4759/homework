@@ -1,1 +1,52 @@
 /* 여기에 스타일을 구현해 주세요 */
+body {
+  width: 420px;
+  height: 225px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  text-align: center;
+}
+
+.avatar-container {
+  width: 396px;
+  height: 195px;
+  padding: 15px 12px;
+
+  .avatar {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    padding: 10px;
+  }
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  .status-on,
+  .status-off {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    border: 1px solid white;
+  }
+
+  .status-on {
+    background-color: #4cfe88;
+    margin-left: 44px;
+    margin-top: 44px;
+  }
+
+  .status-off {
+    background-color: #dbdbdb;
+    margin-left: 44px;
+    margin-top: 44px;
+  }
+}
