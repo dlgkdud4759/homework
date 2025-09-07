@@ -1,1 +1,150 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  --default-color: #121212;
+  --size: 16px;
+  --input-font: 14px;
+  --white: #fff;
+  --black: #333333;
+  --gray: #999999;
+  --input-border-gray: #dadada;
+  --naver-color: #03cf5d;
+  --button-border-green: #03bb54;
+  --focus-bg: #e9f0fd;
+}
+
+body {
+  color: var(--default-color);
+}
+
+.login-Container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 10px;
+  inline-size: 100%;
+
+  .input-warpper {
+    background: var(--white);
+
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 40px;
+    inline-size: 100%;
+
+    @media (width > 769px) {
+      width: 460px;
+      padding: 0 20px 0 20px;
+    }
+
+    input {
+      font: var(--default-font);
+      border: 0 none;
+      background: none;
+      outline: 0;
+      padding: 0;
+    }
+
+    /* sr-only */
+    label {
+      flex: 0 0 auto;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .inputId {
+      border: 1px solid var(--input-border-gray);
+      background: var(--white);
+      padding: 10px 10px 10px 10px;
+
+      &:focus-within {
+        border-color: var(--naver-color);
+        background: var(--focus-bg);
+      }
+    }
+
+    .inputPwd {
+      border: 1px solid var(--input-border-gray);
+      background: var(--white);
+      padding: 10px 10px 10px 10px;
+      margin-top: 10px;
+
+      &:focus-within {
+        border-color: var(--naver-color);
+        background: var(--focus-bg);
+      }
+    }
+
+    &:focus {
+      border-color: var(--naver-color);
+      background: #e9f0fd;
+    }
+  }
+
+  /* 로그인 버튼 */
+  .button-login {
+    color: var(--white);
+    background: var(--naver-color);
+    border: 1px solid var(--button-border-green);
+    padding: 12px 20px 12px 20px;
+    margin-top: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    inline-size: 100%;
+
+    @media (width > 769px) {
+      width: 460px;
+    }
+  }
+
+  /* 보안 서식 */
+  .security-warpper {
+    color: var(--black);
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    .login-keep {
+      display: contents;
+      align-items: center;
+
+      input[type='checkbox'] {
+        appearance: none;
+        width: 0;
+        height: 0;
+      }
+
+      input::before {
+        content: url(../preview/images/uncheck.svg);
+      }
+
+      input::after {
+        content: url(../preview/images/check.svg);
+      }
+    }
+
+    .ip-security {
+      a {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: 500;
+        margin-right: 8px;
+      }
+
+      span {
+        color: var(--gray);
+        font-weight: 700;
+      }
+
+      @media (width < 769px) {
+        display: none;
+      }
+    }
+  }
+}
